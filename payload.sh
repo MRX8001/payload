@@ -17,19 +17,17 @@ echo "#################################"
 #Entrando na pasta do metasploit-framework
 cd $HOME ; cd metasploit-framework
 #
-
-echo "1-criar payload"; sleep 2
-echo "2-executar o msfconsole"; sleep 2
-
+echo
+echo
 echo "INFORME O HOST DO SEU TERMUX:"
 read -p "[+]>>" host
-
+echo
 echo  "INFORME A PORTA QUE VOCE QUER USAR:"
 read -p "[+]>>" porta
-
+echo
 echo "INFORME O DISPOSITIVO QUE VOCE QUER HACKEAR:"
 read -p "[+]>>" dispositivo
-
+echo
 echo  "INFORME O NOME DO PAYLOAD:"
 read -p "[+]>>" nome
 #
