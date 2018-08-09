@@ -1,6 +1,11 @@
 #! /bin/bash
 #
+#Limpando a tela
+clear
 #
+#Escrevendo Lord Termux
+figlet Lord Termux
+sleep 4
 #
 #Limpar a tela
 clear
@@ -40,6 +45,9 @@ echo
 echo "\033[1;32m\n\n[+]=>INFORME O DISPOSITIVO A SER INVADIDO"
 read -p "[+]=>" dispo
 #
+clear
+figlet CREATE
+#
 #Entrando na pasta do metasploit
 cd ..
 cd $HOME ; cd metasploit-framework
@@ -73,7 +81,6 @@ fi
 if [ "$opcao" = "4" ];then
  echo
 clear
-figlet Exit
-sleep 1
+figlet EXIT
 exit
 fi
