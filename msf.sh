@@ -17,10 +17,9 @@ figlet MSFVENOM
 #MENU
 echo
 echo '======================================='
-echo '= \033[1;34m[\033[1;31m1]>> \033[1;33mCriar payload'
-echo '= \033[1;34m[\033[1;31m2]>> \033[1;33mIniciar Metasploit'
-echo '= \033[1;34m[\033[1;31m3]>> \033[1;33mInstalar Metasploit'
-echo '= \033[1;34m[\033[1;31m4]>> \033[1;33mSair'
+echo '= \033[1;36m[\033[1;36m1]>> \033[1;33mCriar payload'
+echo '= \033[1;36m[\033[1;36m3]>> \033[1;33mInstalar Metasploit'
+echo '= \033[1;36m[\033[1;36m4]>> \033[1;33mSair'
 echo '======================================='
 echo
 #Escolher entre 1 2 ou 3
@@ -58,18 +57,6 @@ cd $HOME ; cd metasploit-framework
 fi
 if [ "$opcao" = "2" ];then
 echo
-#
-#Entrando na pasta do metasploit
-clear
-figlet Msfconsole
-cd ..
-cd $HOME ; cd metasploit-framework
-#
-#Executando o msfconsole
-./msfconsole
-fi
-if [ "$opcao" = "3" ];then
-echo
  echo "\033[1;32m\n\n[+]=>INSTALANDO METASPLOIT"; sleep 2
 echo
 cd ..
@@ -77,9 +64,10 @@ termux-setup-storage
 pkg install curl
 curl -LO https://raw.githubusercontent.com/Hax4us/Metasploit_termux/master/metasploit.sh
 chmod +x metasploit.sh
+mv -v /data/data/com.termux/files/home/Payload/metasploit.sh /data/data/com.termux/files/home
 ./metasploit.sh
 fi
-if [ "$opcao" = "4" ];then
+if [ "$opcao" = "3" ];then
  echo
 clear
 figlet EXIT
