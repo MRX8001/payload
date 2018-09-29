@@ -18,8 +18,8 @@ figlet MSFVENOM
 echo
 echo '======================================='
 echo '= \033[1;36m[\033[1;36m1]>> \033[1;33mCriar payload'
-echo '= \033[1;36m[\033[1;36m3]>> \033[1;33mInstalar Metasploit'
-echo '= \033[1;36m[\033[1;36m4]>> \033[1;33mSair'
+echo '= \033[1;36m[\033[1;36m2]>> \033[1;33mInstalar Metasploit'
+echo '= \033[1;36m[\033[1;36m3]>> \033[1;33mSair'
 echo '======================================='
 echo
 #Escolher entre 1 2 ou 3
