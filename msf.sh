@@ -443,5 +443,28 @@ echo
    rm -rf .linuxpayload.rc
    exit
 fi
+if [ "$num" = "2" ];then
+clear
+figlet Metasploit
+echo
+   echo "\033[1;32m\n\n[+]=>INSTALANDO METASPLOIT"
+#
+pkg install curl
+#
+curl -LO https://raw.githubusercontent.com/Hax4us/Metasploit_termux/master/metasploit.sh
+#
+chmod +x metasploit.sh
+#
+mv -v metasploit.sh /$HOME
+#
+cd /$HOME
+#
+./metasploit.sh
 exit
-
+fi
+if [ "$num" = "3" ];then
+clear
+figlet Exit
+exit
+fi
+exit
