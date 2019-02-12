@@ -453,6 +453,8 @@ figlet Metasploit
 echo
    echo "\033[1;32m\n\n[+]=>INSTALANDO METASPLOIT"
 #
+termux-setup-storage
+#
 pkg install curl
 #
 curl -LO https://raw.githubusercontent.com/Hax4us/Metasploit_termux/master/metasploit.sh
