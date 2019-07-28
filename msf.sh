@@ -452,20 +452,16 @@ clear
 figlet Metasploit
 echo
    echo "\033[1;32m\n\n[+]=>INSTALANDO METASPLOIT"
-#
-termux-setup-storage
-#
-pkg install curl
-#
-curl -LO https://raw.githubusercontent.com/Hax4us/Metasploit_termux/master/metasploit.sh
-#
-chmod +x metasploit.sh
-#
-mv -v metasploit.sh /$HOME
-#
-cd /$HOME
-#
-./metasploit.sh
+apt list metasploit -a
+sleep 2
+pkg install unstable-repo
+clear
+figlet Metasploit
+echo
+ echo "\033[1;32m\n\n[+]=>INSTALANDO METASPLOIT"
+apt list metasploit -a
+sleep 2
+pkg install metasploit -y
 exit
 fi
 if [ "$num" = "3" ];then
