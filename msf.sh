@@ -452,6 +452,12 @@ clear
 figlet Metasploit
 echo
    echo "\033[1;32m\n\n[+]=>INSTALANDO METASPLOIT"
+pkg update
+pkg upgrade
+clear
+figlet Metasploit
+echo
+   echo "\033[1;32m\n\n[+]=>INSTALANDO METASPLOIT"
 apt list metasploit -a
 sleep 2
 pkg install unstable-repo
