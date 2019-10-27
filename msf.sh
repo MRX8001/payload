@@ -452,6 +452,7 @@ clear
 figlet Metasploit
 echo
    echo "\033[1;32m\n\n[+]=>INSTALANDO METASPLOIT"
+termux-setup-storage
 pkg update
 pkg upgrade
 clear
